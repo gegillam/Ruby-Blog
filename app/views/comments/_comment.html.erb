@@ -1,15 +1,8 @@
 <p>
-  <h4>Commenter:</h4>
-  <%= comment.commenter %>
-</p>
-
-<p>
-  <h4>Comment:</h4>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <%= link_to "<i class = 'fa fa-times'></i>".html_safe,
+               [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+
+  <b><%= comment.commenter %>:</b> <%= comment.body %>
 </p>
