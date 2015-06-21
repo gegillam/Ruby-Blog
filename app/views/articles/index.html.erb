@@ -1,24 +1,29 @@
-<h1 class='title'>Listing articles</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Show</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-
-  <% @articles.each do |article| %>
+<h1 class='title'>Articles</h1>
+<div class='well'>
+  <table class='table'>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= link_to '<i class="fa fa-search"></i>'.html_safe, article_path(article) %> </td>
-      <td><%= link_to '<i class="fa fa-cog"></i>'.html_safe, edit_article_path(article) %> </td>
-      <td><%= link_to '<i class="fa fa-close"></i>'.html_safe, article_path(article),
-      method: :delete,
-      data: { confirm: 'are you sure' } %> </td>
+      <th>Title</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
-  <% end %>
 
-  <%= link_to 'New article', new_article_path %>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %> Comments: <%= article.comments.count %></td>
+        <td><%= link_to '<i class="fa fa-search"></i>'.html_safe, article_path(article) %> </td>
+        <td><%= link_to '<i class="fa fa-cog"></i>'.html_safe, edit_article_path(article) %> </td>
+        <td><%= link_to '<i class="fa fa-close"></i>'.html_safe, article_path(article),
+        method: :delete,
+        data: { confirm: 'are you sure' } %> </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= link_to "New article <i class='fa fa-plus'></i>".html_safe, new_article_path %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </table>
+</div>
 
-</table>
+<%= link_to 'Home', controller: 'welcome' %>

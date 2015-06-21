@@ -1,0 +1,16 @@
+
+ h1.title{
+   text-align:center;
+ }
+div.jumbotron{
+  margin:auto;
+  padding: 10%;
+  padding-top:50px;
+  width:100%;
+  min-width:420px;
+  min-height:100%;
+}
+
+html,body{
+  min-width:100%;
+}
