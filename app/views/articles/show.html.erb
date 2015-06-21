@@ -2,7 +2,7 @@
 <strong><h1 class='title'><%= @article.title %></h1></strong>
 <div class='well'>
   <p>
-    <%= @article.text %>
+    <%= simple_format(@article.text) %>
   </p>
   <% if @article.comments.any? %>
     <h4>Comments</h4>
